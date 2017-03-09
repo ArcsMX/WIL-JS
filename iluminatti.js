@@ -1,16 +1,20 @@
 function draw (){
 	var base = parseInt(document.getElementById("base").value);
 	var res = '∆';
+	var arresp = new Array();
 	for(var i = 0; i < base; i++ ){
 		
 		var lambda = res;
-	document.getElementById("board").innerHTML = lambda+"<br>";
-		res = res + '∆';
+	    arresp.push(lambda);
+		res = '<li>'+res + '∆';
 		
-		for (var j = base - 1; j > 0; j--) {
-			document.getElementById("board").innerHTML = lambda+"<br>";
+		for (var j = base - 1; j > base + 1; j--) {
+			var epsi = lambda;
+			llambda = '<li>'+epsi - '∆';
+			arresp.push( epsi);
 		}
 
 	
 	}
+	document.getElementById("board").innerHTML = arresp.join(' <br> ');
 }
