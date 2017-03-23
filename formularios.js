@@ -1,34 +1,20 @@
 function info(){
 	var t1 = document.getElementById("nombre").value;
-	var t2 = document.getElementById("edad").value;
+	var t2 = parseInt(document.getElementById("edad").value);
 	var t3 = document.getElementById("mail").value;
-	var t4 = document.getElementById("telefono").value;
-
+	var t4 = parseInt(document.getElementById("telefono").value);
 	
-	var arresp = new Array();
-	var i = 0;
-	var error = "No se recibio suficiente informacion en el formulario.";
+	var error = '<hr>'+"No se recibio suficiente informacion en el formulario.";
 
-	if(t1 != null  && t2 != null && t3 != null && t4 != null){
-		alert("Un campo esta vacio.");
-		document.getElementById("imprime").innerHTML = error;
+	if(t1 && t2 && t3 && t4){
+		var text = '<hr>'+t1 +'<br>' + t2+'<br>'+t3+'<br>'+t4;
+		document.getElementById("imprime").innerHTML = document.getElementById("imprime").innerHTML +text ;
 	}
-	
 	else
 	{
-		alert(t1);
-		alert(t2);
-		alert(t3);
-		alert(t4);
-		
-		arresp[i] = text;
-	
-		var text = t1 +'<br>' + t2+'<br>'+t3+'<br>'+t4;
-		document.getElementById("imprime").innerHTML = text;
+		alert("Un campo esta vacio.");
+		document.getElementById("imprime").innerHTML = document.getElementById("imprime").innerHTML +error ;
 	}
-	
-
-	
-	
 
 }
+
