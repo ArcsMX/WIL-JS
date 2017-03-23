@@ -14,10 +14,6 @@ function draw (){
 			llambda = epsi - '∆';
 			arresp.push( epsi);
 		}
-
-	
 	}
-
 	document.getElementById("board").innerHTML = arresp.join(' <center> ');
-
 }
