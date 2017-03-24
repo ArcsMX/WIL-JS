@@ -14,7 +14,7 @@ function info(){
 		aux = name;
 		//alert(name);
 		
-		var text = '<div id = "texto">'+'<hr>'+t1 +'<br>' + t2+'<br>'+t3+'<br>'+t4+'<br>'+'<button id="Eliminar" onclick="elimina();" >Eliminar</button>'+'</div>';
+		var text = '<div id = "texto">'+ '<hr>' + "Nombre: " + t1 + '.' + '<br>' + "Edad: " + t2 + " anios." + '<br>' + "Mail: " + t3 + '<br>' + "Telefono: " + t4 + '.' + '<br>' + '<button id="Eliminar" onclick="elimina();" >Eliminar</button>' + '</div>';
 		document.getElementById("imprime").innerHTML = document.getElementById("imprime").innerHTML +text ;
 		document.getElementById("texto").id= name;
 		
@@ -35,6 +35,22 @@ function info(){
 
 
 function elimina(){
-	document.getElementById(aux).remove();
+	var bot = document.getElementById("Eliminar");
+	var div = bot.parentNode.id;
+	var res = div.substring(5,div.length);
+
+alert(div);
+alert(res);
+//div.remove();
+
+//document.getElementById("Eliminar").parentNode.remove();
 }
 
+/*var pDoc = document.getElementById("myParagraph");
+var parentDiv = ??????????   
+
+<div id="test>
+    <p id="myParagraph">Testing</p>
+</div>
+
+parentDiv = pDoc.parentNode;*/
