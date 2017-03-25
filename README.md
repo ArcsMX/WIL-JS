@@ -1,2 +1,9 @@
 # fuzzy-waffle
-practia 1
+Ejercicios de JavaScript.
+
+
+                                            
+                                            
+                                            
+
+
