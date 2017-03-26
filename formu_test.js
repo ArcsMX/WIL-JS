@@ -70,3 +70,4 @@ function elimina(clicked_id){
 
 	document.getElementById(document.getElementById(clicked_id).parentNode.id).remove();
 }
+
