@@ -40,7 +40,7 @@ function info(){
 		
        document.getElementById("imprime").innerHTML = document.getElementById("imprime").innerHTML + error + '<button id="elimina" onClick="elimina(this.id); " >Eliminar</button>' +'</div>';
        document.getElementById("texto").id= name;
-	   document.getElementById("elimina").id = riv;
+       document.getElementById("elimina").id = riv;
 	}
 
 }
