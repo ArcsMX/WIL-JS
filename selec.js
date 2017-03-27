@@ -6,6 +6,8 @@ function idioma(){
 	document.getElementById("langSelec").style.visibility = "visible";
 	lang = document.getElementById("idiomas").value;
 
+	document.getElementById("seleccionado").innerHTML = lang;
+
 	//alert(document.getElementById("idiomas").value);
 
 }
@@ -18,4 +20,7 @@ function aceptar(){
 	res +=  lang +',' + niv+ ';' ;
 	//alert(res);
 	document.getElementById("total").innerHTML = res;
+}
+function elimina(){
+
 }
