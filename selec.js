@@ -54,9 +54,11 @@ function nivel(clicked_id){
 
 function aceptar(){
 	res +=  lang +',' + niv+ ';' ;
+	var aux = res + ",;";
+	//alert(aux);
 	//alert(res);
 
-	if(res == ",;" || res == res+ ){
+	if(res == ",;"){
 		alert("No se ingreso un idioma ni un nivel.");
 	}
 	else{
@@ -65,7 +67,30 @@ function aceptar(){
 	
 }
 function elimina(clicked_id){
-	document.getElementById(document.getElementById(clicked_id).parentNode.id).remove();
+	var arcs = clicked_id;
+	var index = arcs.slice(8,arcs.length);
 
-}
+	//alert(index);
+
+	var idiomaLocal = document.getElementById("seleccionado" + index).innerHTML;
+	var nivelLocal = document.getElementById("niveles" + index).value ;
+
+	var elemento = idiomaLocal +',' + nivelLocal + ';' ;
+
+	//alert(idiomaLocal);
+	//alert(nivelLocal)
+	alert(elemento);
+
+	var pos = res.replace(elemento,"");
+	//alert(pos);
+	res = pos;
+
+
+	document.getElementById(document.getElementById(clicked_id).parentNode.id).remove();
+	
+		document.getElementById("total").innerHTML = res;
+	
+	//Buscar el value de idioma con id de (elimina+i).parentNode, con ese value buscarlo en el string, pegado a ese value estara el nivel.
+	//Se puede usar replace :thinking:
+	
 }
