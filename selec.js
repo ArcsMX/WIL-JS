@@ -45,7 +45,13 @@ function nivel(){
 function aceptar(){
 	res +=  lang +',' + niv+ ';' ;
 	//alert(res);
-	document.getElementById("total").innerHTML = res;
+	if(res == ",;"){
+		alert("No se ingreso un idioma ni un nivel.");
+	}
+	else{
+		document.getElementById("total").innerHTML = res;
+	}
+	
 }
 function elimina(){
 
