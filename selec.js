@@ -55,7 +55,6 @@ function idioma(){
 	auxIntermedio = nameNivI;
 	auxAvanzado = nameNivA;
 
-	
 	i++;
 }
 
