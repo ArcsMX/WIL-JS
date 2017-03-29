@@ -90,14 +90,26 @@ function aceptar(){
 	//alert(aux);
 	//alert(res);
 
-	if(res == ",;"){
+	if(res === ",;"){
 		alert("No se ingreso un idioma ni un nivel.");
 	}
 	else{
 		document.getElementById("total").innerHTML = res;
 	}
+	for (i; i >= 0; i--){
+
+	var nameDiv = "langSelec" + i;
 	
+	var nameP = "seleccionado" + i;
+	var nameSel = "niveles" + i;
+	var nameElim = "eliminar" + i;
+
+	var nameNivB = "nivBasico"+ i;
+	var nameNivI = "nivInt" + i;
+	var nameNivA = "nivAvan" + i;
+    }
 }
+
 function elimina(clicked_id){
 	var arcs = clicked_id;
 	var index = arcs.slice(8,arcs.length);
@@ -124,6 +136,5 @@ function elimina(clicked_id){
 	
 	//Buscar el value de idioma con id de (elimina+i).parentNode, con ese value buscarlo en el string, pegado a ese value estara el nivel.
 	//Se puede usar replace :thinking:
-	
 }
 
