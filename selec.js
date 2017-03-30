@@ -77,9 +77,10 @@ function nivel(clicked_id){
 
 function aceptar(){
 	var j;
-
+	res = "";
+	
 	for (j=0; j < i; j++){
-
+	
 	var resLocal;
 	var indexSelec = "seleccionado" + j;
 	var indexNivel = "niveles" + j;
@@ -87,9 +88,9 @@ function aceptar(){
 	lang = document.getElementById(indexSelec).innerHTML;
 	niv = document.getElementById(indexNivel).value;
 
-	resLocal =  lang +',' + niv+ ';' ;
+	resLocal =  lang +',' + niv + ';' ;
 
-	res.concat(resLocal.toString());
+	res += resLocal;
 
     }
 
