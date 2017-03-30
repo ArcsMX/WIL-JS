@@ -18,13 +18,8 @@ function idioma(){
 	var nameNivB = "nivBasico"+ i;
 	var nameNivI = "nivInt" + i;
 	var nameNivA = "nivAvan" + i;
-
-	//alert ("Indice de LANGSELEC = "+ nameDiv);
-	//alert ("Indice de SELECCIONADO = " + nameP);
-
 	
 	lang = document.getElementById("idiomas").value;
-	//alert(document.getElementById("idiomas").value);
 
 	var cuadroNiveles =   '<div id="langSelec">' 
 	 					+ '<hr>'
@@ -61,8 +56,6 @@ function idioma(){
 function nivel(clicked_id){
 	niv = document.getElementById(clicked_id).value;
 
-	//alert("Esta es la funcion nivel con valor: "+ niv);
-
 	switch(niv){
 
 		case "basico":
@@ -80,61 +73,43 @@ function nivel(clicked_id){
 		default: 
 		
 	}
-
-	//alert(niv);
 }
 
 function aceptar(){
-	res +=  lang +',' + niv+ ';' ;
-	var aux = res + ",;";
-	//alert(aux);
-	//alert(res);
+	var j;
 
-	if(res === ",;"){
-		alert("No se ingreso un idioma ni un nivel.");
-	}
-	else{
-		document.getElementById("total").innerHTML = res;
-	}
-	for (i; i >= 0; i--){
+	for (j=0; j < i; j++){
 
-	var nameDiv = "langSelec" + i;
+	var resLocal;
+	var indexSelec = "seleccionado" + j;
+	var indexNivel = "niveles" + j;
 	
-	var nameP = "seleccionado" + i;
-	var nameSel = "niveles" + i;
-	var nameElim = "eliminar" + i;
+	lang = document.getElementById(indexSelec).innerHTML;
+	niv = document.getElementById(indexNivel).value;
 
-	var nameNivB = "nivBasico"+ i;
-	var nameNivI = "nivInt" + i;
-	var nameNivA = "nivAvan" + i;
+	resLocal =  lang +',' + niv+ ';' ;
+
+	res.concat(resLocal.toString());
+
     }
+
+    document.getElementById("total").innerHTML = res;
 }
 
 function elimina(clicked_id){
 	var arcs = clicked_id;
 	var index = arcs.slice(8,arcs.length);
 
-	//alert(index);
-
 	var idiomaLocal = document.getElementById("seleccionado" + index).innerHTML;
 	var nivelLocal = document.getElementById("niveles" + index).value ;
 
 	var elemento = idiomaLocal +',' + nivelLocal + ';' ;
 
-	//alert(idiomaLocal);
-	//alert(nivelLocal)
-	alert(elemento);
-
 	var pos = res.replace(elemento,"");
-	//alert(pos);
 	res = pos;
-
 
 	document.getElementById(document.getElementById(clicked_id).parentNode.id).remove();
 
 		document.getElementById("total").innerHTML = res;
-	
-	//Buscar el value de idioma con id de (elimina+i).parentNode, con ese value buscarlo en el string, pegado a ese value estara el nivel.
-	//Se puede usar replace :thinking:
 }
 
